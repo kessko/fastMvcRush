@@ -1,0 +1,30 @@
+﻿@model fastMvcRush.Models.GuestRequest
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RNSV</title>
+</head>
+<body>
+    <div>
+        @using(Html.BeginForm())
+        {
+            @Html.ValidationSummary();
+       <h1> Input Name :   @Html.TextBoxFor(x => x.Name); </h1>
+            <h1> Input Phone :   @Html.TextBoxFor(x => x.Phone); </h1>
+            <h1> Input Email :   @Html.TextBoxFor(x => x.Email); </h1>
+            <h1> you Come? :   @Html.DropDownListFor(x=>x.Come,
+            new[]{ new SelectListItem(){ Text = "Yes, I can", Value = bool.TrueString},
+                new SelectListItem(){Text = "No, I cant", Value= bool.FalseString}},"Choose an option") </h1>
+            <input name="Submit" type="submit" />
+        }
+
+    </div>
+</body>
+</html>
