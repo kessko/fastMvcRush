@@ -14,7 +14,8 @@ namespace fastMvcRush.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.ComeText = "Alloha Man";
+            DateTime now = DateTime.Now;
+            ViewBag.ComeText = now.Hour > 12 ? "Good evening" : "Good morning";
             return View();
         }
         [HttpGet]
@@ -22,6 +23,7 @@ namespace fastMvcRush.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult RNSV(GuestRequest guestRequest)
         {
